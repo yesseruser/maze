@@ -2,6 +2,10 @@ import pygame
 
 mapa = []
 
+class player:
+    def __init__(self):
+        coord = (1, 1)
+
 
 def init():
     mapa = [

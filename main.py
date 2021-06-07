@@ -17,6 +17,7 @@ map = [
 pygame.init()
 
 money = 0
+font = pygame.font.SysFont("consolas", 40)
 
 window = pygame.display.set_mode((1200, 600))
 
@@ -28,8 +29,6 @@ finish = pygame.image.load("img/4.png")
 character = pygame.image.load("img/character.png")
 character_x = 1
 character_y = 10
-
-
 
 run = True
 while run:
@@ -65,5 +64,6 @@ while run:
                     elif space == 4:
                         window.blit(finish, (x * 50, y * 50))
     window.blit(character, (character_x * 50, character_y * 50))
+    window.blit(font.render(str(money), True, (255, 255, 255)), (400, 15))
 
     pygame.display.flip()

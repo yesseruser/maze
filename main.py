@@ -30,6 +30,18 @@ character = pygame.image.load("img/character.png")
 character_x = 1
 character_y = 10
 
+for y in range(0, 12, 1):
+    for x in range(0, 24, 1):
+        space = map[y][x]
+        if space == 1:
+            window.blit(empty, (x * 50, y * 50))
+        elif space == 2:
+            window.blit(wall, (x * 50, y * 50))
+        elif space == 3:
+            window.blit(money, (x * 50, y * 50))
+        elif space == 4:
+            window.blit(finish, (x * 50, y * 50))
+
 run = True
 while run:
     for event in pygame.event.get():

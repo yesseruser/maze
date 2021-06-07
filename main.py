@@ -50,10 +50,9 @@ while run:
             elif event.key == pygame.K_UP:
                 if map[character_y - 1][character_x] != 2:
                     character_y -= 1
-
             if map[character_y][character_x] == 3:
                 map[character_y][character_x] = 1
-
+                money += 1
             for y in range(0, 12, 1):
                 for x in range(0, 24, 1):
                     space = map[y][x]

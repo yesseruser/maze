@@ -1,5 +1,5 @@
 import pygame
-map = [
+level = [
        [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2],
        [2, 1, 1, 1, 3, 2, 2, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2],
        [2, 1, 2, 2, 2, 2, 2, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2],
@@ -32,7 +32,7 @@ character_y = 10
 
 for y in range(0, 12, 1):
     for x in range(0, 24, 1):
-        space = map[y][x]
+        space = level[y][x]
         if space == 1:
             window.blit(empty, (x * 50, y * 50))
         elif space == 2:
@@ -49,23 +49,23 @@ while run:
             run = False
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_RIGHT:
-                if map[character_y][character_x + 1] != 2:
+                if level[character_y][character_x + 1] != 2:
                     character_x += 1
             elif event.key == pygame.K_LEFT:
-                if map[character_y][character_x - 1] != 2:
+                if level[character_y][character_x - 1] != 2:
                     character_x -= 1
             elif event.key == pygame.K_DOWN:
-                if map[character_y + 1][character_x] != 2:
+                if level[character_y + 1][character_x] != 2:
                     character_y += 1
             elif event.key == pygame.K_UP:
-                if map[character_y - 1][character_x] != 2:
+                if level[character_y - 1][character_x] != 2:
                     character_y -= 1
-            if map[character_y][character_x] == 3:
-                map[character_y][character_x] = 1
+            if level[character_y][character_x] == 3:
+                level[character_y][character_x] = 1
                 money_count += 1
             for y in range(0, 12, 1):
                 for x in range(0, 24, 1):
-                    space = map[y][x]
+                    space = level[y][x]
                     if space == 1:
                         window.blit(empty, (x * 50, y * 50))
                     elif space == 2:

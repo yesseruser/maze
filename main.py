@@ -63,6 +63,9 @@ while run:
             if level[character_y][character_x] == 3:
                 level[character_y][character_x] = 1
                 money_count += 1
+            if level[character_y][character_x] == 4:
+                if money == 8:
+                    run = False
             for y in range(0, 12, 1):
                 for x in range(0, 24, 1):
                     space = level[y][x]

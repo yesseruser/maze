@@ -78,6 +78,6 @@ while run:
                     elif space == 4:
                         window.blit(finish, (x * 50, y * 50))
     window.blit(character, (character_x * 50, character_y * 50))
-    window.blit(font.render(str(money_count), True, (255, 255, 255)), (400, 15))
+    window.blit(font.render(str(money_count), True, (0, 255, 0)), (400, 15))
 
     pygame.display.flip()

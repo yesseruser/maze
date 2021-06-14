@@ -32,6 +32,8 @@ character = pygame.image.load("img/character.png")
 character_x = 1
 character_y = 10
 
+money_collect = pygame.mixer.Sound("sounds/collectcoin.wav")
+
 for y in range(0, 12, 1):
     for x in range(0, 24, 1):
         space = level[y][x]
@@ -77,6 +79,7 @@ while run:
             if level[character_y][character_x] == 3:
                 level[character_y][character_x] = 1
                 money_count += 1
+                money_collect.play()
 
             if level[character_y][character_x] == 4:
                 if money_count == 8:

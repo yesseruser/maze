@@ -10,7 +10,7 @@ level = [
        [2, 1, 1, 3, 2, 3, 2, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2],
        [2, 1, 2, 2, 2, 1, 2, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2],
        [2, 1, 2, 3, 3, 1, 1, 1, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2],
-       [2, 1, 2, 3, 3, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4, 2],
+       [2, 1, 2, 3, 3, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 4],
        [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2]
     ]
 
@@ -49,16 +49,16 @@ while run:
             run = False
         if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_RIGHT:
-                if level[character_y][character_x + 1] != 2:
+                if character_x < 23 and level[character_y][character_x + 1] != 2:
                     character_x += 1
             elif event.key == pygame.K_LEFT:
-                if level[character_y][character_x - 1] != 2:
+                if character_x < 23 and level[character_y][character_x - 1] != 2:
                     character_x -= 1
             elif event.key == pygame.K_DOWN:
-                if level[character_y + 1][character_x] != 2:
+                if character_x < 23 and level[character_y + 1][character_x] != 2:
                     character_y += 1
             elif event.key == pygame.K_UP:
-                if level[character_y - 1][character_x] != 2:
+                if character_x < 23 and level[character_y - 1][character_x] != 2:
                     character_y -= 1
             if level[character_y][character_x] == 3:
                 level[character_y][character_x] = 1
